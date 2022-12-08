@@ -3,4 +3,8 @@ dev
 *.srt
 *.mkv
 *.txt
+*.zip
 *.vscode
+anagram.py
+backup.py
+algos.py
