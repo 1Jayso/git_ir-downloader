@@ -1,0 +1,21 @@
+name: Run vulneralbility testing and make a PR 
+# Event trigger
+on:
+ push:
+  branches:
+   - main
+ pull_request:
+    types: [closed]
+    branches:
+      - main
+jobs:
+  securityCheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/python-3.8@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          command: monitor
