@@ -15,9 +15,8 @@ jobs:
       - uses: actions/checkout@master
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/python-3.8@master
-        run: pip install -r requirements.txt
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
           
         with:
-          command: monitor
+          command: snyk test --org=org --file=requirements.txt -- --allow-missing
