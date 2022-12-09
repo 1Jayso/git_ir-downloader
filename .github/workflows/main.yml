@@ -19,4 +19,4 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_AUTH_TOKEN }}
           
         with:
-          command: code test --org=org --file=requirements.txt -- --allow-missing 
+          command: code test  
