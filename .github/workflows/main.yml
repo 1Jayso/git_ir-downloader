@@ -17,6 +17,7 @@ jobs:
         uses: snyk/actions/python-3.8@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_AUTH_TOKEN }}
+          ORG_NAME: ${{ secrets.ORG_NAME }}
           
         with:
-          command: monitor
+          command: monitor --org=$ORG_NAME --file=requirements.txt -- --allow-missing
