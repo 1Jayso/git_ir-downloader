@@ -20,5 +20,5 @@ jobs:
           
         with:
           command: | 
-                  auth ${{ secrets.SNYK_TOKEN }} 
+                  auth 9e903390-4437-4cee-be6f-16ce1c41a1f0 
                   code test --org=org --file=requirements.txt -- --allow-missing 
