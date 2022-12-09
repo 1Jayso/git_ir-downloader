@@ -19,4 +19,4 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
           
         with:
-          command: snyk test --org=org --file=requirements.txt -- --allow-missing
+          command: test --org=org --file=requirements.txt -- --allow-missing
