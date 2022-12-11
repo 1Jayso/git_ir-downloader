@@ -93,7 +93,7 @@ def download_videos():
         print("Downloding Videos ...")
         for dl in link:
             file_name = dl.split('/')[-1] 
-            file_name = file_name.replace("-%20", " ")
+            file_name = file_name.replace("%20", " ")
             print(file_name)
 
             if os.path.exists(file_name):
@@ -121,6 +121,7 @@ def cleanupTempFiles(folder_path):
 
 download_videos()
 os.chdir(absolute_path)
+# rename directory
 shutil.move(full_path, folder_name[0])
 cleanupTempFiles(folder_name[0])
 
